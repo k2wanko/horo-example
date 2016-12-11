@@ -1,16 +1,19 @@
 package main
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/k2wanko/horo"
+	"github.com/k2wanko/horo/middleware"
 	"golang.org/x/net/context"
 )
 
 func main() {
 	h := horo.New()
+	h.Use(middleware.Logger())
 	h.GET("/", handler)
-	h.ListenAndServe(":8080")
+	log.Fatal(h.ListenAndServe(":8080"))
 }
 
 func handler(c context.Context) error {
