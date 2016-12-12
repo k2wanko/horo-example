@@ -11,7 +11,7 @@ import (
 
 func main() {
 	h := horo.New()
-	h.Use(middleware.Logger())
+	h.Use(middleware.Logger(), middleware.Recover())
 	h.GET("/", handler)
 	log.Fatal(h.ListenAndServe(":8080"))
 }
