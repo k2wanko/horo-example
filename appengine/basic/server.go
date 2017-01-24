@@ -8,7 +8,7 @@ import (
 	"fmt"
 
 	"github.com/k2wanko/horo"
-	"github.com/k2wanko/horo/middleware"
+	"github.com/k2wanko/horo-middleware"
 	"golang.org/x/net/context"
 )
 
